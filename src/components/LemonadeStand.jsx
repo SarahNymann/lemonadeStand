@@ -1,5 +1,5 @@
 import { useDispatch, useSelector  } from "react-redux";
-import { sellLemonade } from "../redux/profitSlice";
+import { sellLemonade, buyLemons } from "../redux/profitSlice";
 
 
 function LemonadeStand () {
