@@ -1,4 +1,4 @@
-import LemonadeStand from "../components/LemonadeStand";
+import LemonadeStand from "./components/LemonadeStand";
 
 function App() {
   return (
