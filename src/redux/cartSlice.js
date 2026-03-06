@@ -35,9 +35,25 @@ const cartSlice = createSlice({
                 item.quantity += 1;
             }
         },
+
+        decreaseQuantity: (state, action) => {
+            const item = state.items.find(
+                (item) => item.idDrink  === action.payload
+            );
+
+            if(item) {                                               // Hvis vi finder produktet, mindsker vi antallet
+                if (item.quantity > 1) {
+                    item.quantity -= 1;
+                } else {
+                    state.items = state.items.filter(                       
+                        (item) => item.idDrink !== action.payload
+                    );
+                }
+            }
+        }
     },
 });
 
-export const { addToCart, removeFromCart, increaseQuantity } = cartSlice.actions; // Her eksporterer vi reduceren så den kan tilføjes til Redux store
+export const { addToCart, removeFromCart, increaseQuantity, decreaseQuantity } = cartSlice.actions; // Her eksporterer vi reduceren så den kan tilføjes til Redux store
 
 export default cartSlice.reducer;   // Her eksporterer vi reduceren så den kan tilføjes til Redux store
