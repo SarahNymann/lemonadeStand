@@ -54,6 +54,6 @@ const cartSlice = createSlice({
     },
 });
 
-export const { addToCart, removeFromCart, increaseQuantity, decreaseQuantity } = cartSlice.actions; // Her eksporterer vi reduceren så den kan tilføjes til Redux store
+export const { addToCart, removeFromCart, increaseQuantity, decreaseQuantity } = cartSlice.actions; // Her eksporterer vi actions, så de kan bruges i komponenterne
 
 export default cartSlice.reducer;   // Her eksporterer vi reduceren så den kan tilføjes til Redux store
