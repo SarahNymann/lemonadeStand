@@ -18,6 +18,16 @@ export default function Shop() {
       {drinks.map((drink) => (
         <div key={drink.idDrink}>
           <h3>{drink.strDrink}</h3>
+
+          <img
+            src={drink.strDrinkThumb}
+            alt={drink.strDrink}
+            width="300"
+          />
+
+          <button>
+            Add to Cart
+          </button>
         </div>
       ))}
     </div>
