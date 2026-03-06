@@ -19,7 +19,7 @@ export default function Shop() {
 
   return (
     <div>
-      <h2>Shop</h2>
+      <h1>Lemonade Shop</h1>
 
       {drinks.map((drink) => (
         <div key={drink.idDrink}>

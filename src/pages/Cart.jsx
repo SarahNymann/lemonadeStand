@@ -15,7 +15,7 @@ export default function Cart() {
 
   return (
     <div>
-      <h2>Cart</h2>
+      <h1>Cart</h1>
 
       {cartItems.length === 0 ? (
         <p>Your cart is empty</p>

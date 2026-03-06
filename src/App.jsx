@@ -9,7 +9,6 @@ export default function App() {
   return (
     <BrowserRouter basename="lemonadeStand">
       <div>
-        <h1>Welcome to the Lemonade Stand!</h1>
         <Navbar />
 
         <Routes>
