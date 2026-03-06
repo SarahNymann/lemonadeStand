@@ -1,8 +1,25 @@
+import { useEffect, useState } from "react";
+
 export default function Shop() {
-    return (
-      <div>
-        <h2>Shop</h2>
-        <p>Her kommer drinks fra API.</p>
-      </div>
-    );
-  }
+  const [drinks, setDrinks] = useState([]);
+
+  useEffect(() => {
+    fetch("https://www.thecocktaildb.com/api/json/v1/1/search.php?s=lemon")
+      .then((response) => response.json())
+      .then((data) => {
+        setDrinks(data.drinks);
+      });
+  }, []);
+
+  return (
+    <div>
+      <h2>Shop</h2>
+
+      {drinks.map((drink) => (
+        <div key={drink.idDrink}>
+          <h3>{drink.strDrink}</h3>
+        </div>
+      ))}
+    </div>
+  );
+}
