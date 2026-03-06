@@ -1,7 +1,13 @@
 import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+
+import { addToCart } from "../redux/cartSlice";
+
 
 export default function Shop() {
   const [drinks, setDrinks] = useState([]);
+
+  const dispath = useDispatch();
 
   useEffect(() => {
     fetch("https://www.thecocktaildb.com/api/json/v1/1/search.php?s=lemon")
@@ -25,7 +31,7 @@ export default function Shop() {
             width="300"
           />
 
-          <button>
+          <button onClick={() => dispath(addToCart(drink))}>
             Add to Cart
           </button>
         </div>
